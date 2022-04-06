@@ -1,0 +1,13 @@
+*, *::after, *::before {
+  margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.App {
+  min-width: 100vw;
+  min-height: 100vh;
+  background-color: rgb(20,20,20);
+  padding: 50px;
+  font-family: sans-serif;
+}

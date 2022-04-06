@@ -1,0 +1,33 @@
+.Item {
+    border: 1px solid white;
+    display: flex;
+    height: var(--height);
+    margin: 20px 0px;
+    border-radius: 7px;
+    overflow: hidden;
+    --height: 130px;
+}
+
+.Item .pic-container {
+    height: 100%;
+    aspect-ratio: 1;
+    background-color: red;
+}
+
+.Item .content, .quantity {
+    height: 100%;
+    width: calc(100% - (var(--height) + 180px));
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.Item .content * {
+    padding: 0px calc(0.1 * var(--height));
+}
+
+.Item .quantity {
+    height: 100%;
+    width: 180px;
+}
