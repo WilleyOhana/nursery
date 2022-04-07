@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import axios from 'axios';
 import './Item.css';
 
 const Item = ({ plant }) => {
@@ -13,8 +14,10 @@ const Item = ({ plant }) => {
         }
     }
     
-    const deletePlant = () => {
-        
+    const deletePlant = async () => {
+        let res = await axios.delete(`http://localhost:3001/plants/${plant.id}`);
+    
+        console.log(res);
     }
 
     return (
