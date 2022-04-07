@@ -2,7 +2,7 @@ const mariadb = require('mariadb');
 const { v4: uuidv4 } = require('uuid');
 
 var pool = mariadb.createPool({
-    host: '192.168.4.29',
+    host: process.env.IP_ADDRESS,
     user: process.env.DB_USER,
     password: '',
     database: "nursery",
