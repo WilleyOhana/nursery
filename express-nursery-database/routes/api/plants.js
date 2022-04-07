@@ -37,6 +37,22 @@ router.post('/:plantName/:quantity/:description/:addedBy', (req, res, next) => {
 
         res.send(results);
     })
-}) 
+})
+
+// Delete a plant from the database
+router.delete('/:plantID', (req, res, next) => {
+    console.log('API request to delete a plant');
+
+    const plantID = req.params.plantID;
+
+    db.deletePlant(plantID, (error, results) => {
+        if(error) {
+            res.status(500).send('Server Error');
+            return;
+        }
+
+        res.send(results);
+    })
+})
 
 module.exports = router;
