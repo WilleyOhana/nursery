@@ -27,7 +27,7 @@ const getAllPlants = async (callback) => {
         callback(false, data);
 
     } catch (error) {
-        console.log(error);
+        console.error(error);
         callback(true);
         return;
     }
@@ -46,7 +46,7 @@ const addNewPlant = async (plant, callback) => {
         callback(false, response);
 
     } catch (error) {
-        console.log(error);
+        console.error(error);
         callback(true);
         return;
     }
@@ -54,7 +54,8 @@ const addNewPlant = async (plant, callback) => {
 
 // Delete a plant
 const deletePlant = async (id, callback) => {
-    const query = `DELETE FROM plants WHERE id="${id}"`
+
+    const query = `DELETE FROM plants WHERE id="${id}"`;
 
     try {
         const connection = await pool.getConnection();
@@ -63,7 +64,7 @@ const deletePlant = async (id, callback) => {
 
         callback(false, response);
     } catch (error) {
-        console.log(error);
+        console.error(error);
         callback(true);
         return;
     }
