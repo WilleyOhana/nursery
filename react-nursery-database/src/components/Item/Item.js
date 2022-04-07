@@ -3,6 +3,7 @@ import './Item.css';
 const Item = ({ plant }) => {
     return (
         <div className="Item">
+            <div className='delete-btn'>Delete</div>
             <div className='pic-container'></div>
             <div className="content">
                 <h2>{plant.name}</h2>
