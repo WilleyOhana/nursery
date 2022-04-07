@@ -19,6 +19,7 @@ router.get('/', (req, res, next) => {
 });
 
 // Add a new plant to database
+// Requires a plant name, a quantity, a description, and who it was added by in the request params
 router.post('/:plantName/:quantity/:description/:addedBy', (req, res, next) => {
     console.log('API request to add a new plant');
 
@@ -40,6 +41,7 @@ router.post('/:plantName/:quantity/:description/:addedBy', (req, res, next) => {
 })
 
 // Delete a plant from the database
+// Requires a plantID to be sent in the request params
 router.delete('/:plantID', (req, res, next) => {
     console.log('API request to delete a plant');
 
