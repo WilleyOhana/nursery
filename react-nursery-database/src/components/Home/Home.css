@@ -2,3 +2,44 @@
     width: 100%;
     height: 100%;
 }
+
+.Home header {
+    width: 100%;
+}
+
+.Home .add-btn {
+    width: 175px;
+    --add-background: rgb(61, 172, 61);
+    --add-border: rgb(72,215,72);
+    background: var(--add-background);
+    display: flex;
+    border-radius: 5px;
+    border: 2px solid var(--add-border);
+    cursor: pointer;
+    transition: 0.05s ease-in-out;
+    text-decoration: none;
+    color: white;
+}
+
+.Home .add-btn:hover {
+    filter: brightness(0.9);
+}
+
+.Home .add-btn .plus {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 7px 10px;
+    font-family: monospace;
+    font-size: 16px;
+    border-right: solid 2px var(--add-border);
+}
+
+.Home .add-btn .text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 7px 10px;
+    font-family: monospace;
+    font-size: 16px;
+}

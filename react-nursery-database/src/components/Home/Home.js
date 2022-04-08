@@ -1,8 +1,8 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 import Item from '../Item/Item';
 import './Home.css';
-import { useState } from 'react';
 
 const Home = () => {
 
@@ -15,13 +15,19 @@ const Home = () => {
             setPlants(res.data);
         }
 
+
         asyncFunc();
     }, []);
 
     return (
         <div className="Home">
             <header>
-
+                <Link className="add-btn" to="/add-item">
+                    <div className="plus">+</div>
+                    <div className="text">
+                        <p>Add new plant</p>
+                    </div>
+                </Link>
             </header>
 
             <div className="plants-container">
