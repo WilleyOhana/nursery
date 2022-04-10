@@ -9,6 +9,7 @@ const AddItem = () => {
     const [name, setName] = useState('');
     const [quantity, setQuantity] = useState(0);
     const [details, setDetails] = useState('');
+    const [picture, setPicture] = useState(null);
 
     const navigate = useNavigate();
 
@@ -53,6 +54,13 @@ const AddItem = () => {
                     placeholder='e.g. 2 gallon pot, requires loose soil and daily water' 
                     onChange={(e) => setDetails(e.target.value)}
                     value={details}
+                    required
+                />
+
+                <input
+                    type="file"
+                    onChange={(e) => setPicture(e.target.value)}
+                    accept="image/jpeg, image/png" 
                     required
                 />
 
