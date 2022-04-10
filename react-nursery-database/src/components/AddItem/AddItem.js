@@ -50,15 +50,20 @@ const AddItem = () => {
 
                 <label htmlFor="details">Details</label>
                 <textarea 
-                    rows="5" 
+                    rows="5"
+                    name="details"
+                    id="details"
                     placeholder='e.g. 2 gallon pot, requires loose soil and daily water' 
                     onChange={(e) => setDetails(e.target.value)}
                     value={details}
                     required
                 />
 
+                <label htmlFor='picture'>Upload picture</label>
                 <input
                     type="file"
+                    name="picture"
+                    id="picture"
                     onChange={(e) => setPicture(e.target.value)}
                     accept="image/jpeg, image/png" 
                     required
