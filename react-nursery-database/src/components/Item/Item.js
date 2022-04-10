@@ -1,30 +1,42 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 import './Item.css';
 
 const Item = ({ plant }) => {
 
-    const [visible, setVisible] = useState('');
+    const [dropdownVisible, setDropdownVisible] = useState('');
+    const [ellipsesVisible, setEllipsesVisible] = useState('');
 
+    const detailsRef = useRef(null);
+
+    // Check if the details are overflowing, and place ellipses if so
+    useEffect(() => {
+        if(detailsRef.current.scrollHeight > detailsRef.current.clientHeight) {
+            setEllipsesVisible('show');
+        }
+    }, [])
+
+    // Set dropdown CSS if user clicks button
     const toggleDropdown = () => {
-        if(visible === "visible") {
-            setVisible('');
+        if(dropdownVisible === "visible") {
+            setDropdownVisible('');
         } else {
-            setVisible('visible');
+            setDropdownVisible('visible');
         }
     }
     
+    // API call
     const deletePlant = async () => {
         let res = await axios.delete(`http://localhost:3001/plants/${plant.id}`);
-    
+
         console.log(res);
     }
 
     return (
         <div className="Item">            
-            <div className={`options-btn ${visible}`} onClick={toggleDropdown}>
+            <div className={`options-btn ${dropdownVisible}`} onClick={toggleDropdown}>
                 {
-                    visible ?
+                    dropdownVisible ?
                     <>
                         <div className='cross left'></div>
                         <div className='cross right'></div>
@@ -38,9 +50,10 @@ const Item = ({ plant }) => {
                 }
             </div>
 
-            <div className={`dropdown ${visible}`}>
+            <div className={`dropdown ${dropdownVisible}`}>
                 <ul>
                     <li onClick={deletePlant}>Delete</li>
+                    <li>Edit</li>
                 </ul>
 
                 <div className="triangle"></div>
@@ -49,8 +62,10 @@ const Item = ({ plant }) => {
             <div className='pic-container'></div>
             <div className="content">
                 <h2>{plant.name}</h2>
-                <p>{plant.id}</p>
-                <p>{plant.details}</p>
+                <p ref={detailsRef} className="details">
+                    {plant.details}
+                    <div className={`ellipses ${ellipsesVisible}`}>...</div>
+                </p>
             </div>
             <div className="quantity">
                 <h4>Quantity:</h4>
