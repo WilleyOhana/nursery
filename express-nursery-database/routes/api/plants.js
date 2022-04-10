@@ -14,7 +14,7 @@ router.get('/', (req, res, next) => {
             return;
         }
 
-        res.send(results);
+        res.status(200).send(results);
     })
 });
 
@@ -35,8 +35,8 @@ router.post('/:plantName/:quantity/:description/:addedBy', (req, res, next) => {
             res.status(500).send('Server Error');
             return;
         }
-
-        res.send(results);
+        
+        res.status(200).send("Plant successfully added");
     })
 })
 
@@ -53,7 +53,7 @@ router.delete('/:plantID', (req, res, next) => {
             return;
         }
 
-        res.send(results);
+        res.status(200).send('Plant successfully deleted');
     })
 })
 
