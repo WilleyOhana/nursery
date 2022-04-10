@@ -7,6 +7,7 @@ import './Home.css';
 const Home = () => {
 
     const [plants, setPlants] = useState([]);
+    
 
     // Fetch all the plants from the database
     useEffect(() => {

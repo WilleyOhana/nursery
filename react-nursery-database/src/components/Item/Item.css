@@ -6,18 +6,23 @@
     margin: 20px 0px;
     border-radius: 7px;
     overflow: hidden;
-    --height: 130px;
+    --height: 350px;
+    max-width: 400px;
+    min-width: 350px;
+    width: 45%;
+    margin: 20px 2.5%;
+    box-sizing: border-box;
 }
 
 .Item .pic-container {
     height: 100%;
-    aspect-ratio: 1;
+    width: 90px;
     background-color: red;
 }
 
 .Item .content, .quantity {
     height: 100%;
-    width: calc(100% - (var(--height) + 180px));
+    width: calc(100% - 90px - 100px);
     color: white;
     display: flex;
     flex-direction: column;
@@ -30,7 +35,7 @@
 
 .Item .quantity {
     height: 100%;
-    width: 180px;
+    width: 100px;
 }
 
 .Item .options-btn {

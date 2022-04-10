@@ -43,3 +43,9 @@
     font-family: monospace;
     font-size: 16px;
 }
+
+.Home .plants-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
