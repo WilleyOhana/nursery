@@ -16,12 +16,12 @@
 
 .Item .pic-container {
     height: 100%;
-    width: 90px;
+    width: 120px;
     background-color: red;
 }
 
 .Item .content, .quantity {
-    width: calc(100% - 90px - 100px);
+    width: calc(100% - 120px - 100px);
     color: white;
     display: flex;
     flex-direction: column;
@@ -29,7 +29,7 @@
     position: relative;
 }
 
-.Item .content h2 {
+.Item .content h3 {
     padding: 0px 10px;
 }
 
@@ -38,7 +38,7 @@
     padding: 0px 10px;
     --content-line-height: 20px;
     line-height: var(--content-line-height);
-    max-height: calc(4 * var(--content-line-height));
+    max-height: calc(6 * var(--content-line-height));
     overflow: hidden;
     margin-right: 20px;
 }
@@ -78,6 +78,7 @@
     padding: 2px;
     border-radius: 50%;
     cursor: pointer;
+    z-index: 1;
 }
 
 .Item .options-btn.visible {
@@ -126,7 +127,7 @@
 
 .Item .dropdown.visible {
     pointer-events: all;
-    z-index: 0;
+    z-index: 1;
     top: 55px;
     opacity: 1;
     transform: scale(1);

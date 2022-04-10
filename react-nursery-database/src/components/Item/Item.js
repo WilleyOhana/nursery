@@ -25,7 +25,7 @@ const Item = ({ plant }) => {
         }
     }
     
-    // API call
+    // API call to delete plant
     const deletePlant = async () => {
         let res = await axios.delete(`http://localhost:3001/plants/${plant.id}`);
 
@@ -61,7 +61,7 @@ const Item = ({ plant }) => {
 
             <div className='pic-container'></div>
             <div className="content">
-                <h2>{plant.name}</h2>
+                <h3>{plant.name}</h3>
                 <p ref={detailsRef} className="details">
                     {plant.details}
                     <div className={`ellipses ${ellipsesVisible}`}>...</div>
