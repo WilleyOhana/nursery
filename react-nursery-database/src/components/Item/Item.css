@@ -6,11 +6,11 @@
     margin: 20px 0px;
     border-radius: 7px;
     overflow: hidden;
-    --height: 350px;
-    max-width: 400px;
+    --height: 250px;
+    max-width: 420px;
     min-width: 350px;
     width: 45%;
-    margin: 20px 2.5%;
+    margin: 1%;
     box-sizing: border-box;
 }
 
@@ -21,16 +21,44 @@
 }
 
 .Item .content, .quantity {
-    height: 100%;
     width: calc(100% - 90px - 100px);
     color: white;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+    position: relative;
 }
 
-.Item .content * {
-    padding: 0px calc(0.1 * var(--height));
+.Item .content h2 {
+    padding: 0px 10px;
+}
+
+.Item .content .details {
+    position: relative;
+    padding: 0px 10px;
+    --content-line-height: 20px;
+    line-height: var(--content-line-height);
+    max-height: calc(4 * var(--content-line-height));
+    overflow: hidden;
+    margin-right: 20px;
+}
+
+.Item .content .ellipses {
+    background: linear-gradient(
+        to right,
+        rgba(0,0,0,0),
+        rgba(20,20,20,1)
+    );
+    position: absolute;
+    display: none;
+    bottom: 0px;
+    right: 0px;
+    width: 100%;
+    text-align: right;
+}
+
+.Item .content .ellipses.show {
+    display: block;
 }
 
 .Item .quantity {
@@ -132,4 +160,3 @@
     top: -16px;
     right: 10px;
 }
-
