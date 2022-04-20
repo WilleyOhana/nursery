@@ -11,6 +11,7 @@ const PORT = 3001 || process.env.PORT;
 
 // Send React app, use CORS
 app.use(express.static(path.join(__dirname, "..", "react-nursery-database", "build")));
+app.use(express.json());
 app.use(cors());
 
 app.use("/plants", plantsRouter);

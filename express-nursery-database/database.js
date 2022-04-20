@@ -36,7 +36,7 @@ const getAllPlants = async (callback) => {
 // Add a new plant
 const addNewPlant = async (plant, callback) => {
     const newID = uuidv4();
-    const query = `INSERT INTO plants VALUES ("${newID}", "${plant.name}", ${plant.quantity}, "${plant.description}", "${plant.addedBy}")`;
+    const query = `INSERT INTO plants VALUES ("${newID}", "${plant.name}", ${plant.quantity}, "${plant.description}", "${plant.addedBy},", "NULL")`;
 
     try {
         const connection = await pool.getConnection();
