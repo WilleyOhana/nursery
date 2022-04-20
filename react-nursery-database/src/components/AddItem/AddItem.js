@@ -15,8 +15,13 @@ const AddItem = () => {
 
     const submitAddItemForm = async (e) => {
         e.preventDefault();
+        const data = new FormData();
+        data.append('name', name);
+        data.append('quantity', quantity);
+        data.append('details', details);
+        data.append('picture', picture);
 
-        await axios.post(`http://localhost:3001/plants/${name}/${quantity}/${details}/MarinnCarpenter`);
+        await axios.post(`http://localhost:3001/plants/add-plant`, data);
         navigate('/');
     }
 
@@ -64,7 +69,7 @@ const AddItem = () => {
                     type="file"
                     name="picture"
                     id="picture"
-                    onChange={(e) => setPicture(e.target.value)}
+                    onChange={(e) => setPicture(e.target.files[0])}
                     accept="image/jpeg, image/png" 
                     required
                 />
